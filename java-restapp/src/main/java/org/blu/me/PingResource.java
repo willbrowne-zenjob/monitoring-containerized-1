@@ -15,7 +15,7 @@ public class PingResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Timed
     public String get() throws InterruptedException {
-    	  Thread.sleep(2000);
+    	Thread.sleep(2000);
         return "pong";
     }
 }

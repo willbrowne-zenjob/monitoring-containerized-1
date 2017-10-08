@@ -22,7 +22,6 @@ import io.prometheus.client.exporter.common.TextFormat;
 @Path("metrics")
 public class Metrics {
 
-
     @GET
     @Produces(TextFormat.CONTENT_TYPE_004)
     @Timed

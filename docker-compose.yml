@@ -9,13 +9,21 @@ services:
       - "8081:8080"
     command: "bash -c 'cp -r /usr/src/java-restapp /tmp/java-restapp; cd /tmp/java-restapp; mvn clean package exec:java'"
 
+  java-prom-rest:
+    image: maven:3-jdk-7
+    volumes:
+      - $PWD/java-restapp2:/usr/src/java-restapp2:ro
+    ports:
+      - "8082:1234"
+    command: "bash -c 'cp -r /usr/src/java-restapp2 /tmp/java-restapp2; cd /tmp/java-restapp2; mvn clean package exec:java'"
+
   promserver:
     image: prom/prometheus:0.19.2
     volumes:
       - $PWD/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - $PWD/prometheus/console/consoles:/etc/prometheus/consoles:ro
       - $PWD/prometheus/console/console_libraries:/etc/prometheus/console_libraries:ro
-  #    - $PWD/alert.rules:/etc/prometheus/alert.rules
+      - $PWD/alert.rules:/etc/prometheus/alert.rules
     ports:
       - "9090:9090"
     extra_hosts:

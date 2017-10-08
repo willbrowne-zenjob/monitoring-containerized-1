@@ -2,7 +2,9 @@
 
 set -e
   
-export DOCKER_HOST_IP=$(ip route | awk '/docker/ { print $NF }')
+# $(ip route | awk '/docker/ { print $NF }')
+
+export DOCKER_HOST_IP=127.0.0.1
 docker-compose stop
 docker-compose rm -f
 docker-compose up -d --force-recreate
