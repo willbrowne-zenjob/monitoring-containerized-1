@@ -1,0 +1,9 @@
+ALERT service_down
+  IF up == 0
+
+ALERT high_load
+  IF hello_worlds_total > 10
+  ANNOTATIONS {
+      summary = "Instance under high load",
+      description = " is under high load.",
+  }

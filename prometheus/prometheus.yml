@@ -2,7 +2,13 @@ global:
   scrape_interval: 5s
   evaluation_interval: 2s
 
+  # The smarthost and SMTP sender used for mail notifications.
+  # smtp_smarthost: 'localhost:587'
+  # smtp_from: 'Alertmanager <alertmanager@example.org>'
 
+# Load and evaluate rules in this file every 'evaluation_interval' seconds.
+rule_files:
+    - 'alert.rules'
 
 scrape_configs:
   - job_name: 'overwritten-default'

@@ -1,0 +1,14 @@
+route:
+  group_by: [Alertname]
+  # Send all notifications to me.
+  receiver: email-me
+
+receivers:
+- name: email-me
+  email_configs:
+  - to: will.browne@zenjob.com
+    from: will.browne@zenjob.com
+    smarthost: smtp.gmail.com:587
+    auth_username: "will.browne@zenjob.com"
+    auth_identity: "will.browne@zenjob.com"
+    auth_password: "bcrhouwbnsE*88"

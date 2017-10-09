@@ -26,19 +26,6 @@
           "title": "Prometheus HTTP exporter",
           "type": "text"
         }
-        // ,
-        // {
-        //   "title": "Ping endpoint",
-        //   "error": false,
-        //   "span": 6,
-        //   "editable": true,
-        //   "type": "text",
-        //   "isNew": true,
-        //   "id": 16,
-        //   "mode": "markdown",
-        //   "content": " `org_blu_me_PingResource` is a REST Ping endpoint with a ~2s hard-encoded latency.\n\nRequest Ping at: [http://localhost:8081/ping](http://localhost:8081/ping)\n\n```\n\n@Path(\"ping\")\npublic class PingResource {\n\n    @GET\n    @Produces(MediaType.TEXT_PLAIN)\n    @Timed\n    public String get() throws InterruptedException {\n    \tThread.sleep(2000);\n        return \"pong\";\n    }\n}\n```",
-        //   "links": []
-        // }
       ],
       "title": "New row"
     },
